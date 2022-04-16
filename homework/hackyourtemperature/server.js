@@ -6,7 +6,7 @@ const PORT = 3000
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  res.send('hello from backend to frontend!!!')
+  res.json('hello from backend to frontend!!!')
 })
 
 app.post('/weather', (req, res) => {
@@ -14,7 +14,7 @@ app.post('/weather', (req, res) => {
   if (!cityName) {
     return res.status(400).json('city name not provided')
   }
-  res.status(200).json(cityName)
+  res.status(200).json({ cityName })
 })
 
 app.listen(PORT, () => {
