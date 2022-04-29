@@ -16,7 +16,6 @@ describe("POST /weather", () => {
       const response = await request.post("/weather").send({
         cityName: "name",
       })
-      console.log(response);
       expect(response.headers['content-type']).toEqual(expect.stringContaining("json"))
     })
   })
